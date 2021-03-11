@@ -7,13 +7,8 @@ from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler
 
 # load variables from environment variables
-verbose = int(os.environ.get('VERBOSE'))
-if verbose is None:
-    verbose = 0
-
-directory = os.environ.get('DIRECTORY')
-if directory is None:
-    directory = '/tmp/'
+verbose = int(os.environ.get('VERBOSE', 0))
+directory = os.environ.get('DIRECTORY', '/tmp/')
 
 if __name__ == "__main__":
     if verbose:
